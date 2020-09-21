@@ -38,7 +38,4 @@ class Repository(private val terrainDao: TerrainDao) {
 
         })
     }
-
-
-
 }
