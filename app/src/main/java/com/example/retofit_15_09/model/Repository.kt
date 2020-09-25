@@ -1,7 +1,6 @@
 package com.example.retofit_15_09.model
 
 import android.util.Log
-import androidx.lifecycle.LiveData
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
