@@ -19,7 +19,7 @@ class MarsViewModel(application: Application) : AndroidViewModel(application){
     }
 
     fun exposeLiveDataFromDatabase(): LiveData<List<Terrain>> {
-        return repository.mLiveData
+        return repository.returnLiveDataFromTerrain(mId)
     }
 
 

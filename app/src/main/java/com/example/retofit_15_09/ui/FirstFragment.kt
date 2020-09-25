@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.retofit_15_09.R
 import com.example.retofit_15_09.model.Terrain
@@ -54,7 +55,9 @@ class FirstFragment : Fragment(), MarsAdapter.CallbackInterface {
         //    findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
     }
 
-    override fun passTheData(terrain: Terrain) {
-        TODO("Not yet implemented")
+    override fun passTheData(mTerrain: Terrain) {
+        val mBundle = Bundle()
+        mBundle.putString("id", mTerrain.id)
+        findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment,mBundle)
     }
 }
