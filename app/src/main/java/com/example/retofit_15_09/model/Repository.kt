@@ -2,7 +2,6 @@ package com.example.retofit_15_09.model
 
 import android.util.Log
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -15,7 +14,7 @@ class Repository(private val terrainDao: TerrainDao) {
     private val service = RetrofitClient.getRetrofitClient()
     val mLiveData = terrainDao.getAllTerrainsFromDB()
 
-    fun returnLiveDataFromTerrain(mId: String):LiveData<Terrain>{
+    fun returnLiveDataFromTerrain(mId: String) {
         terrainDao.obtainTerrainByID(mId)
     }
 
@@ -38,7 +37,6 @@ class Repository(private val terrainDao: TerrainDao) {
             override fun onFailure(call: Call<List<Terrain>>, t: Throwable) {
                 Log.e("Repository", t.message.toString())
             }
-
         })
     }
 }
